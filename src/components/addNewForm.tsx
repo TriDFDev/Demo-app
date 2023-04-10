@@ -3,7 +3,7 @@ import { artist } from "../shared/interfaces/artist.interface";
 import { Modal } from "./modal";
 
  type newArtistProps = {
-        newArtistData: (artist: artist | any) => void, 
+        newArtistData: (artist: artist | any) => void,      
         isOpen: boolean,
     toggle: () => void,
     }
@@ -29,7 +29,7 @@ const AddForm: React.FC<newArtistProps> = ( {newArtistData, isOpen, toggle}) => 
                     <form onSubmit={addNewArtist} className="modal-form" action="">
                         <input id="name" onChange={handleArtistData} className="modal-form--input" type="text" placeholder="Artist name" />
                         <input id="image" onChange={handleArtistData} className="modal-form--input" type="text" placeholder="Artist image"  />
-                        <button className="modal-form--buton" type="submit">Submit</button>
+                        <button  className="modal-form--buton" type="submit">Submit</button>
                     </form>
             </Modal>
 

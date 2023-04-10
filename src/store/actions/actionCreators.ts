@@ -1,4 +1,4 @@
-import { artist, artistAction } from '../../shared/interfaces/artist.interface';
+import { DispatchType, artist, artistAction } from '../../shared/interfaces/artist.interface';
 import * as actionTypes from '../actions/actionTypes';
 
 export const addArtist = (artist: artist) => {
@@ -6,7 +6,7 @@ export const addArtist = (artist: artist) => {
         type: actionTypes.ADD_ARTIST,
         artist
     }
-    return action;
+    return mockHttpRequest(action);
 }
 
 export const removeArtist = (artist: artist) =>{
@@ -14,5 +14,13 @@ export const removeArtist = (artist: artist) =>{
         type: actionTypes.REMOVE_ARTIST,
         artist
     }
-    return action;
+    return mockHttpRequest(action);
+}
+
+export const mockHttpRequest = (action: artistAction) => {
+    return (dispatch : DispatchType) => {
+        setTimeout(() => {
+            dispatch(action)
+        }, 1000)
+    }
 }
